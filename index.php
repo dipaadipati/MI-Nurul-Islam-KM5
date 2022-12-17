@@ -75,9 +75,19 @@
 
 
     <div id="galeri" class="containerArtikelHome container">
-        <h2>Galeri Foto</h2>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <h2>Galeri Foto</h2>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" id="galeri-search" class="form-control" placeholder="Cari">
+                </div>
+            </div>
+        </div>
 
-        <div class="artikelHome">
+        <div class="artikelHome" id="galeriData">
             <?php
                 $result = mysqli_query($conn, "SELECT * FROM galeri");
             ?>
