@@ -8,19 +8,13 @@ if(isset($_SESSION['username']))
 if(isset($_POST['username'])){
     $username = $_POST['username'];
     $pwd = $_POST['pwd'];
+    $hash = password_hash($pwd, PASSWORD_DEFAULT);
 
-    $query = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
-    $row = mysqli_fetch_array($query);
-    if(isset($row["password"])){
-        $db_pwd = $row["password"];
-        if(password_verify($pwd, $db_pwd)){
-            $_SESSION["username"] = $username;
-            $_SESSION["role"] = $row["role"];
-            if($row["role"] == "admin")
-                header("Location: admin/index.php");
-            else
-                header("Location: index.php"); 
-        }
+    $query = mysqli_query($conn, "INSERT INTO users (username, password, role) VALUES ('$username', '$hash', 'murid')");
+    if($query){
+        $_SESSION["username"] = $username;
+        $_SESSION["role"] = 'murid';
+        header("Location: index.php"); 
     }
 }
 ?>
@@ -47,13 +41,12 @@ if(isset($_POST['username'])){
     <body class="text-center">
         <form class="form-signin" method="POST">
             <img class="mb-4" src="images/logo.png" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Daftar</h1>
             <label for="inputUsername" class="sr-only">Username</label>
             <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required="" autofocus="">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="Password" required="">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <h5>Belum mempunyai akun? <a href="daftar.php">Daftar sekarang juga</a></h5>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Daftar</button>
             <p class="mt-5 mb-3 text-muted">© 2022 By : <span>M. Adipati Rezkya (19041094)</span></p>
         </form>
     </body>

@@ -81,6 +81,7 @@
                             <a class="nav-link" href="login.php">Login</a>
                         <?php else: ?>
                             <a class="nav-link" href="admin/index.php"><?=$_SESSION["username"]?></a>
+                            <a class="nav-link" href="logout.php">Log out</a>
                         <?php endif ?>
                     </li>
                 </ul>

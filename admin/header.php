@@ -3,6 +3,8 @@
     include('../koneksi.php');
     if(!isset($_SESSION['username']))
         header("Location: ../login.php");
+    if(isset($_SESSION['role']) && $_SESSION['role'] != "admin")
+      header("Location: ../index.php");
 ?>
 
 <html lang="en">

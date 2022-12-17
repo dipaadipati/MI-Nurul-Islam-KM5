@@ -103,6 +103,21 @@
 
         </div>
     </div>
+    
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center">
+            <div id="joinus" class="join">
+                <div class="row">
+                    <div class="col">
+                        <a href="daftar.php">
+                            <button class="joinus">Gabung bersama kami</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <?php include("footer.php") ?>
 
