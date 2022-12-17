@@ -66,9 +66,11 @@
             <h2>Kurikulum</h2>
 
             <div class="boxKurikulum">
-
-                Kurikulum yang digunakan dalam proses belajar mengajar di MIS. Nurul Islam KM. 5 Banjarmasin adalah menggunakan Kurikulum 2013 (K-13) untuk semua mata pelajaran.
-
+                <?php
+                    $result = mysqli_query($conn, "SELECT kurikulum FROM sekolah");
+                    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+                    echo $row["kurikulum"];
+                ?>
             </div>
         </div>
     </div>
@@ -103,7 +105,7 @@
 
         </div>
     </div>
-    
+
     <div class="container">
         <div class="d-flex align-items-center justify-content-center">
             <div id="joinus" class="join">

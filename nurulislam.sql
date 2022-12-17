@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 06:39 PM
+-- Generation Time: Dec 17, 2022 at 07:30 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -49,6 +49,24 @@ INSERT INTO `galeri` (`id`, `title`, `img`, `body`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sekolah`
+--
+
+CREATE TABLE `sekolah` (
+  `id` int(11) NOT NULL,
+  `kurikulum` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sekolah`
+--
+
+INSERT INTO `sekolah` (`id`, `kurikulum`) VALUES
+(1, 'Kurikulum yang digunakan dalam proses belajar mengajar di MIS. Nurul Islam KM. 5 Banjarmasin adalah menggunakan Kurikulum 2013 (K-13) untuk semua mata pelajaran.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -64,7 +82,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'Adipati', '$2y$10$Vdr5kKh/q9gnkGzzgcp.dOfAVthp6kN6SrrS/QgCSV7QvSH60uRFS', 'admin');
+(1, 'Adipati', '$2y$10$Vdr5kKh/q9gnkGzzgcp.dOfAVthp6kN6SrrS/QgCSV7QvSH60uRFS', 'admin'),
+(3, 'Amad', '$2y$10$ZXj10baZ5xf7EcIta3GIO.9Xx3bT4aK9EEHaWwA1xzUqu4iTz69ne', 'murid');
 
 --
 -- Indexes for dumped tables
@@ -74,6 +93,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 -- Indexes for table `galeri`
 --
 ALTER TABLE `galeri`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sekolah`
+--
+ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -93,10 +118,16 @@ ALTER TABLE `galeri`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `sekolah`
+--
+ALTER TABLE `sekolah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
