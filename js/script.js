@@ -18,7 +18,6 @@ $("#galeri-search").keydown(function(){
       data = JSON.parse(data)
       var str = ""
       for(var galeri of data){
-        console.log(galeri)
         str += `<a class="perArtikelHome">`
         str += `<img src="images/${galeri.img}" alt="Galeri Foto ${galeri.id}">`
         str += `<h3>${galeri.title}</h3>`
@@ -28,6 +27,31 @@ $("#galeri-search").keydown(function(){
         str += `</a>`
       }
       $("#galeriData").html(str)
+    },
+    error: function(e){
+      console.log(e)
+    }
+  });
+})
+
+$("#artikel-search").keydown(function(){
+  var q = $(this).val()
+  $.ajax({
+    type: "GET",
+    url: currentUrl + "artikel.php?q=" + q,
+    success: function(data) {
+      data = JSON.parse(data)
+      var str = ""
+      for(var galeri of data){
+        str += `<a class="perArtikelHome">`
+        str += `<img src="images/${galeri.img}" alt="Galeri Foto ${galeri.id}">`
+        str += `<h3>${galeri.title}</h3>`
+        str += `<p>`
+        str += galeri.body
+        str += `</p>`
+        str += `</a>`
+      }
+      $("#artikelData").html(str)
     },
     error: function(e){
       console.log(e)

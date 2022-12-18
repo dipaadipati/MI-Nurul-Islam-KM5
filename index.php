@@ -106,6 +106,36 @@
         </div>
     </div>
 
+    <div id="artikel" class="containerArtikelHome container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <h2>Artikel Kegiatan</h2>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" id="artikel-search" class="form-control" placeholder="Cari">
+                </div>
+            </div>
+        </div>
+
+        <div class="artikelHome" id="artikelData">
+            <?php
+                $result = mysqli_query($conn, "SELECT * FROM artikel");
+            ?>
+            <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)): ?>
+                <a class="perArtikelHome">
+                    <img src="images/<?=$row["img"]?>" alt="Galeri Foto <?=$row["id"]+1?>">
+                    <h3><?=$row["title"]?></h3>
+                    <p>
+                        <?=$row["body"]?>
+                    </p>
+                </a>
+            <?php endwhile ?>
+
+        </div>
+    </div>
+
     <div class="container">
         <div class="d-flex align-items-center justify-content-center">
             <div id="joinus" class="join">

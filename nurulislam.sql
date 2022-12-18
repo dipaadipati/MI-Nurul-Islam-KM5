@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2022 at 07:30 PM
+-- Generation Time: Dec 18, 2022 at 10:58 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `nurulislam`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikel`
+--
+
+CREATE TABLE `artikel` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `img` varchar(25) NOT NULL,
+  `body` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `title`, `img`, `body`) VALUES
+(8, 'Upacara Bendera', 'artikel1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus finibus, pulvinar mi ut, feugiat massa. Fusce commodo magna mi, ac tristique orci molestie elementum. Nam non diam laoreet, tincidunt nunc in, facilisis sapien. Donec et orci at nulla tristique volutpat. Morbi blandit commodo diam, aliquam tincidunt neque pretium vel. Praesent ornare mollis faucibus. Phasellus vel ligula sed nisi commodo fermentum pharetra pulvinar ex. Donec venenatis dolor vitae malesuada varius.'),
+(9, 'Study Tour', 'artikel2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus finibus, pulvinar mi ut, feugiat massa. Fusce commodo magna mi, ac tristique orci molestie elementum. Nam non diam laoreet, tincidunt nunc in, facilisis sapien.');
 
 -- --------------------------------------------------------
 
@@ -90,6 +111,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 --
 
 --
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `galeri`
 --
 ALTER TABLE `galeri`
@@ -110,6 +137,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `galeri`
