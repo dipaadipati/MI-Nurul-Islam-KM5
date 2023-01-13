@@ -72,6 +72,42 @@
                     echo $row["kurikulum"];
                 ?>
             </div>
+
+            <div class="boxKurikulum">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4>PELAJARAN</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 m-auto">
+                            <ul class="list-group">
+                            <?php
+                                $result = mysqli_query($conn, "SELECT * FROM pelajaran");
+                                while($row = mysqli_fetch_array($result)):
+                            ?>
+                                <li class="list-group-item">
+                                    <?=$row["nama_pelajaran"]?>
+                                    <?php
+                                        if(!empty(json_decode($row["sub_pelajaran"], true)[0])){
+                                            $sub_pelajaran = json_decode($row["sub_pelajaran"]) ?? null;
+                                            echo "<ul>";
+                                            foreach($sub_pelajaran as $key=>$val){
+                                                echo "<li>";
+                                                echo $val;
+                                                echo "</li>";
+                                            }
+                                            echo "</ul>";
+                                        }
+                                    ?>
+                                </li>
+                            <?php endwhile ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

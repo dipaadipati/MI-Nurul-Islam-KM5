@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 10:58 AM
+-- Generation Time: Jan 13, 2023 at 07:35 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,6 +70,33 @@ INSERT INTO `galeri` (`id`, `title`, `img`, `body`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pelajaran`
+--
+
+CREATE TABLE `pelajaran` (
+  `id` int(11) NOT NULL,
+  `nama_pelajaran` varchar(255) NOT NULL,
+  `sub_pelajaran` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelajaran`
+--
+
+INSERT INTO `pelajaran` (`id`, `nama_pelajaran`, `sub_pelajaran`) VALUES
+(17, 'Pendidikan Agama Islam', '[\"Al-Quran Hadist\",\"Akidah-Akhlak\",\"Fikih\",\"Sejarah Kebudayaan Islam\"]'),
+(18, 'Pendidikan Pancasila dan Kewarganegaraan', '[\"\"]'),
+(19, 'Bahasa Indonesia', '[\"\"]'),
+(20, 'Bahasa Arab', '[\"\"]'),
+(21, 'Matematika', '[\"\"]'),
+(22, 'Ilmu Pengetahuan Alam', '[\"\"]'),
+(23, 'Ilmu Pengetahuan Sosial', '[\"\"]'),
+(24, 'Seni Budaya dan Prakarya', '[\"\"]'),
+(25, 'Pendidikan Jasmani, Olahraga, dan Kesehatan', '[\"\"]');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sekolah`
 --
 
@@ -123,6 +150,12 @@ ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pelajaran`
+--
+ALTER TABLE `pelajaran`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
@@ -149,6 +182,12 @@ ALTER TABLE `artikel`
 --
 ALTER TABLE `galeri`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `pelajaran`
+--
+ALTER TABLE `pelajaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `sekolah`
