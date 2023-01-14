@@ -178,7 +178,7 @@
                 <div class="row">
                     <div class="col">
                         <a href="daftar.php">
-                            <button class="joinus">Gabung bersama kami</button>
+                            <button class="joinus">Pendaftaran Siswa/Siswi</button>
                         </a>
                     </div>
                 </div>

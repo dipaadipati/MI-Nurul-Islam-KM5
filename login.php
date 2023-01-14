@@ -53,7 +53,7 @@ if(isset($_POST['username'])){
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="Password" required="">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <h5>Belum mempunyai akun? <a href="daftar.php">Daftar sekarang juga</a></h5>
+            
             <p class="mt-5 mb-3 text-muted">© 2022 By : <span>M. Adipati Rezkya (19041094)</span></p>
         </form>
     </body>
