@@ -20,7 +20,7 @@ include("header.php");
           <div class="row">
         
         <div class="col-md-12 order-md-1">
-          <form class="needs-validation" novalidate="" method="POST">
+          <form class="needs-validation" method="POST">
 
             <div class="mb-3">
               <label for="nama">Nama Pelajaran</label>

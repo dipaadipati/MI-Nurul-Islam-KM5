@@ -3,8 +3,12 @@ include('../koneksi.php');
 if(isset($_GET['id']) && isset($_POST['judul'])){
     $title = $_POST['judul'];
     $img = $_POST['img'];
+    $setImg = "";
+    if(!empty($img)){
+        $setImg = ", img = '$img'";
+    }
     $body = $_POST['body'];
-    $query = mysqli_query($conn, "UPDATE artikel SET title = '$title', img = '$img', body = '$body' WHERE id = " . @$_GET['id']);
+    $query = mysqli_query($conn, "UPDATE artikel SET title = '$title' $setImg, body = '$body' WHERE id = " . @$_GET['id']);
     header("Location: artikel.php");
 }
 include("header.php");
@@ -21,7 +25,7 @@ include("header.php");
           <div class="row">
         
         <div class="col-md-12 order-md-1">
-          <form class="needs-validation" novalidate="" method="POST">
+          <form class="needs-validation" method="POST">
 
             <div class="mb-3">
               <label for="judul">Judul</label>
@@ -29,8 +33,12 @@ include("header.php");
             </div>
 
             <div class="mb-3">
-              <label for="img">Filename Gambar</label>
-              <input type="text" class="form-control" name="img" id="img" value="<?=$data['img']?>" required>
+              <label for="img">Gambar</label>
+              <div class="bg-light text-center">
+                  <img id="tampilanImg" width="400px" height="300px" src="<?=$data['img']?>">
+                  <input type="file" class="form-control bg-light" id="img">
+                  <input type="hidden" name="img" id="img_">
+              </div>
             </div>
             
             <div class="mb-3">
@@ -46,5 +54,28 @@ include("header.php");
         </main>
       </div>
     </div>
+    <script>
+      const convertBase64 = (file) => {
+          return new Promise((resolve, reject) => {
+              const fileReader = new FileReader();
+              fileReader.readAsDataURL(file);
+
+              fileReader.onload = () => {
+                  resolve(fileReader.result);
+              };
+
+              fileReader.onerror = (error) => {
+                  reject(error);
+              };
+          });
+      };
+
+      $('#img').change(async function(event){
+          const file = event.target.files[0];
+          const base64 = await convertBase64(file);
+          $('#tampilanImg').attr("src", base64);
+          $('#img_').val(base64); 
+      })
+	</script>
 </body>
 </html>

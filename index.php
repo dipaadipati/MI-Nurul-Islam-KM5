@@ -131,7 +131,7 @@
             ?>
             <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)): ?>
                 <a class="perArtikelHome">
-                    <img src="images/<?=$row["img"]?>" alt="Galeri Foto <?=$row["id"]+1?>">
+                    <img src="<?=$row["img"]?>" alt="Galeri Foto <?=$row["id"]+1?>">
                     <h3><?=$row["title"]?></h3>
                     <p>
                         <?=$row["body"]?>
@@ -161,7 +161,7 @@
             ?>
             <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)): ?>
                 <a class="perArtikelHome">
-                    <img src="images/<?=$row["img"]?>" alt="Galeri Foto <?=$row["id"]+1?>">
+                    <img src="<?=$row["img"]?>" alt="Galeri Foto <?=$row["id"]+1?>">
                     <h3><?=$row["title"]?></h3>
                     <p>
                         <?=$row["body"]?>

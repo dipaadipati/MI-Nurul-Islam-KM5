@@ -22,8 +22,8 @@
               <thead>
                 <tr>
                   <th class="text-center">No</th>
-                  <th class="text-center">Judul</th>
                   <th class="text-center">Gambar</th>
+                  <th class="text-center">Judul</th>
                   <th class="text-center">Isi</th>
                   <th class="text-center">Aksi</th>
                 </tr>
@@ -32,8 +32,8 @@
                 <?php while($row = mysqli_fetch_array($query)): ?>
                     <tr>
                     <td><?=$no++?></td>
+                    <td><img src="<?=$row['img']?>" class="w-75"></td>
                     <td><?=$row['title']?></td>
-                    <td><?=$row['img']?></td>
                     <td><?=$row['body']?></td>
                     <td class="text-center" width="10%">
                     <a class="btn btn-sm btn-outline-success" href="artikel-edit.php?id=<?=$row['id']?>">
