@@ -38,8 +38,7 @@ include("header.php");
                   <input type="text" class="form-control col-10 ml-3 mt-3" name="sub[]" id="<?=$key==0?"sub1":"sub"?>" value="<?=$val?>">
                 <?php endforeach ?>
                 <button class="btn btn-danger ml-1 mt-auto" id="kurang-sub">-</button>
-                <div class="col-10"></div>
-                <a class="btn btn-primary col-1 mx-auto mt-3" id="tambah-sub">Tambah</a>
+                <a class="btn btn-primary col-1 mx-auto mt-auto" id="tambah-sub">Tambah</a>
               </div>
             </div>
 
@@ -54,7 +53,7 @@ include("header.php");
     <script>
       $("#tambah-sub").click(function(e) {
           e.preventDefault()
-          if($(this).prev().prev().prev()[0].id != "sub1"){
+          if($(this).prev().prev()[0].id != "sub1"){
             //$(this).prev().prev().remove();
           }
           $("#kurang-sub").removeClass("d-none");
