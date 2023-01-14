@@ -6,7 +6,7 @@
     if(isset($_SESSION['role']) && $_SESSION['role'] != "admin")
       header("Location: ../index.php");
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
     <head>
     <meta charset="utf-8">
@@ -26,6 +26,8 @@
     <link href="../css/admin.css" rel="stylesheet">
 
     <script src="../js/jquery.min.js""></script>
+    <script src="../js/tinymce/tinymce.min.js"></script>
+    </head>
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">

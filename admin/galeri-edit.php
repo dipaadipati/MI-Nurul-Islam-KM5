@@ -43,7 +43,7 @@ include("header.php");
             
             <div class="mb-3">
               <label for="body">Isi</label>
-              <input type="text" class="form-control" name="body" id="body" value="<?=$data['body']?>" required>
+              <textarea name="body" id="body"><?=$data['body']?></textarea>
             </div>
             
             <hr class="mb-4">
@@ -55,6 +55,9 @@ include("header.php");
       </div>
     </div>
     <script>
+      tinymce.init({
+        selector: 'textarea#body'
+      });
       const convertBase64 = (file) => {
           return new Promise((resolve, reject) => {
               const fileReader = new FileReader();
